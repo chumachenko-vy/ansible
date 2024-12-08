@@ -23,6 +23,8 @@
     ansible.builtin.template:
        src: "{{source_file}}"
        dest: "{{dst_file}}"
+    notify:
+       - Restart apache2
 
   - name: Write the apache config file
     ansible.builtin.template:
