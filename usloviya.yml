@@ -17,17 +17,20 @@
     apt:
       name: apache2
       state: present
+      when: ansible_os_family == "ubuntu"
 
   - name: Install the latest version of Apache
     ansible.builtin.dnf:
       name: httpd
       state: latest
+      when: ansible_os_family == "RedHat"
   
   - name: Start Apache
     service:
       name: apache2
       state: started
       enabled: yes
+      when: ansible_os_family == "ubuntu"
       
   - name: example copying file with owner and permissions
     ansible.builtin.template:
@@ -41,3 +44,4 @@
       ansible.builtin.service:
         name: apache2
         state: restarted
+        when: ansible_os_family == "ubuntu"
