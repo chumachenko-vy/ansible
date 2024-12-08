@@ -1,0 +1,20 @@
+---
+- name:Variables Playbook
+hosts: all
+become: yes
+
+vars:
+  message1: privet
+  message2: world
+  secret: password123
+
+tasks:
+- name: Print Variables
+  debug:
+    var: secret
+
+- debug:
+    msg: "secretnoe slovo: {{secret}}"
+
+- debug:
+    msg: "Vladelec etogo servera --->{{ ownwr }}<---"
