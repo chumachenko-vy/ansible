@@ -24,7 +24,6 @@
        src: "{{source_file}}"
        dest: "{{dst_file}}"
        mode: 0555
-       notify: Restart apache2 
   
   handlers:
   - name: Restart apache2
