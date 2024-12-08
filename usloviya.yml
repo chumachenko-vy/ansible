@@ -17,7 +17,6 @@
     apt:
       name: apache2
       state: present
-    when: ansible_os_family == "Debian"
 
   - name: Install the latest version of Apache
     ansible.builtin.dnf:
@@ -30,7 +29,6 @@
       name: apache2
       state: started
       enabled: yes
-    when: ansible_os_family == "Debian"
       
   - name: example copying file with owner and permissions
     ansible.builtin.template:
@@ -44,4 +42,3 @@
       ansible.builtin.service:
         name: apache2
         state: restarted
-      when: ansible_os_family == "Debian"
