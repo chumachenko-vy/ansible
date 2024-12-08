@@ -3,13 +3,14 @@
   hosts: all
   become: yes
 
-vars:
-  dict:
+  vars:
     message1: privet
     message2: world
     secret: password123
 
 tasks:
+
+
 - name: Print Variables
   debug:
     var: secret
