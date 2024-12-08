@@ -9,10 +9,19 @@
 
 
   tasks:
-  - name: install Apache
+  - name: check linux version
+    debug:
+      var: ansible_os_family
+
+  - name: install Apache for ubuntu
     apt:
       name: apache2
       state: present
+
+  - name: Install the latest version of Apache
+    ansible.builtin.dnf:
+      name: httpd
+      state: latest
   
   - name: Start Apache
     service:
