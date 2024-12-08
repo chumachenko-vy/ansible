@@ -20,3 +20,12 @@
 
   - debug:
       msg: "Vladelec etogo servera --->{{ owner }}<---"
+  
+  - debug:
+      var: ansible_distribution
+  
+  - shell: uptime
+    register: result
+
+  - debug:
+      var: result
