@@ -4,7 +4,7 @@
   become: yes
 
   vars:
-    souce_file: index.html
+    source_file: index.html
     dst_file: /var/www/html 
 
 
@@ -21,8 +21,8 @@
       state: started
   - name: example copying file with owner and permissions
     copy:
-       src: {{souce_file}}
-       dest: {{dst_file}}
+       src: "{{source_file}}"
+       dest: "{{dst_file}}"
        mode: 0555
        notify: Restart apache2 
   
