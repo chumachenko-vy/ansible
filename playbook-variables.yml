@@ -19,4 +19,4 @@
       msg: "secretnoe slovo: {{secret}}"
 
   - debug:
-      msg: "Vladelec etogo servera --->{{ ownwr }}<---"
+      msg: "Vladelec etogo servera --->{{ owner }}<---"
