@@ -22,7 +22,7 @@
     ansible.builtin.template:
        src: "{{source_file}}"
        dest: "{{dst_file}}"
-    notify:
+      notify:
        - Restart apache2
   
   handlers:
