@@ -20,10 +20,9 @@
       name: apache2
       state: started
   - name: example copying file with owner and permissions
-    ansible.builtin.copy:
+    ansible.builtin.template
        src: "{{source_file}}"
        dest: "{{dst_file}}"
-       mode: 0555
        notify:
         - Restart apache2
   
