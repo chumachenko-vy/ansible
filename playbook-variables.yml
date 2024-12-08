@@ -8,15 +8,15 @@
     message2: world
     secret: password123
 
-tasks:
+  tasks:
 
 
-- name: Print Variables
-  debug:
-    var: secret
+  - name: Print Variables
+    debug:
+      var: secret
 
-- debug:
-    msg: "secretnoe slovo: {{secret}}"
+  - debug:
+      msg: "secretnoe slovo: {{secret}}"
 
-- debug:
-    msg: "Vladelec etogo servera --->{{ ownwr }}<---"
+  - debug:
+      msg: "Vladelec etogo servera --->{{ ownwr }}<---"
