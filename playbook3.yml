@@ -8,7 +8,6 @@
     dst_file: /var/www/html 
 
 
-
   tasks:
   - name: install Apache
     apt:
@@ -25,11 +24,6 @@
        dest: "{{dst_file}}"
     notify:
        - Restart apache2
-
-  - name: Write the apache config file
-    ansible.builtin.template:
-       src: index.html
-       dest: /var/www/html
   
   handlers:
     - name: Restart apache2
