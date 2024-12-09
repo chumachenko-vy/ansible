@@ -22,8 +22,8 @@
         ansible.builtin.template:
         src: "{{source_file}}"
         dest: "{{dst_file}}"
-      notify:
-         - Restart apache2
+  notify:
+       - Restart apache2
 
       - name: Start Apache Debian
         service:
