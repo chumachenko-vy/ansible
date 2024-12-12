@@ -12,25 +12,25 @@
       ansible.builtin.debug:
         var: ansible_os_family
 
-    - name: Install apache httpd (state=present is optional)
+    - name: Install Apache2 Ubuntu
       ansible.builtin.apt:
         name: apache2
         state: present
-      when: ansible_os_family == "Ubuntu"
+      when: ansible_os_family == "Debian"
 
-    - name: Install the latest version of Apache
+    - name: Install Apache RedHat
       ansible.builtin.dnf:
         name: httpd
         state: latest
       when: ansible_os_family == "RedHat"
 
-    - name: Start Apache
+    - name: Start Apache2 Ubuntu
       ansible.builtin.service:
         name: apache2
         state: started
         enabled: yes
 
-    - name: example copying file with owner and permissions
+    - name: Copying file with owner and permissions Ubuntu
       ansible.builtin.template:
         src: "{{source_file}}"
         dest: "{{dst_file}}"
